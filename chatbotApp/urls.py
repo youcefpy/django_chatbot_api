@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path,re_path
-from .views import ChatBotView
+from . import views
 
 urlpatterns = [
-    path('chat', ChatBotView.as_view(), name='chatbot'),
+    re_path(r'^chat/?$', views.ChatBotView.as_view(), name='chatbot'),
 
 ]
